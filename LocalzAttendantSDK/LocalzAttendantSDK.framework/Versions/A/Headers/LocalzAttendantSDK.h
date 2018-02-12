@@ -14,7 +14,6 @@
 
 #import "LocalzAttendant.h"
 #import "LocalzAttendantOrder.h"
-#import "LocalzAttendantLocationStore.h"
 
 extern NSString * _Nonnull const kLocalzEnv;
 
@@ -99,7 +98,7 @@ extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
  * @param options Additional login options (optional)
  * @param completion Completion block returns LocalzAttendant object if successful or error if any
  */
-- (void) loginWithUsername:(NSString * _Nonnull)username password:(NSString * _Nonnull)password branchId:(NSString * _Nullable)branchId force:(BOOL)force options:(NSDictionary * _Nullable)options completion:(void (^_Nullable)(NSError * _Nullable error, LocalzAttendant * _Nullable user))completion;
+- (void) loginWithUsername:(NSString * _Nonnull)username password:(NSString * _Nonnull)password branchId:(NSString * _Nonnull)branchId force:(BOOL)force options:(NSDictionary * _Nullable)options completion:(void (^_Nullable)(NSError * _Nullable error, LocalzAttendant * _Nullable user))completion;
 
 /**
  * Is user currently logged in?
@@ -177,13 +176,6 @@ extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
  * @param completion The completion block which will return error if any
  */
 - (void) retrieveNonCompleteOrdersWithCompletion:(void (^ _Nullable)(NSError * _Nullable error, NSArray * _Nullable orders))completion;
-
-/**
- * Retrieves a location store by a locationId. Location stores manage orders and each have an address
- * @param locationId The locationId to search by
- * @param completion The completion block which returns the LocalzAttendantLocationStore or error if any
- */
-- (NSDictionary *_Nullable) retrieveCurrentStoreDetails;
 
 #pragma mark Offline cached data handler
 
