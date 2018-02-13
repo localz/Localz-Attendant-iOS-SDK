@@ -1,0 +1,1 @@
+../../../../LocalzAttendantSDK/LocalzAttendantSDK/LocalzAttendantSDK.framework/Versions/A/Headers/LocalzAttendant.h

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9eO-Dq-jJr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LocalzAttendantSDK App (Swift)-->
+        <scene sceneID="9lo-xM-tqd">
+            <objects>
+                <viewController id="BfB-1f-bKT" customClass="ViewController" customModule="SampleLocalzAttendantApp_Swift" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oxu-nZ-pRT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lA8-FG-MVZ">
+                                <rect key="frame" x="0.0" y="191" width="375" height="476"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-Mh-a1N">
+                                <rect key="frame" x="16" y="134" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-Om-I3S">
+                                <rect key="frame" x="255" y="96" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                <state key="normal" title="Refresh Orders"/>
+                                <connections>
+                                    <action selector="reloadOrders" destination="BfB-1f-bKT" eventType="touchUpInside" id="Snb-9X-hmA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8t-E2-L5U">
+                                <rect key="frame" x="16" y="96" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <state key="normal" title="Create Order"/>
+                                <connections>
+                                    <action selector="createOrder" destination="BfB-1f-bKT" eventType="touchUpInside" id="BVQ-mK-jgy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qte-k0-Kjd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="LocalzAttendantSDK App (Swift)" id="4ql-Pp-ZmV"/>
+                    <connections>
+                        <outlet property="tableView" destination="lA8-FG-MVZ" id="KPa-h6-DFh"/>
+                        <outlet property="txtOrderNumber" destination="W2U-Mh-a1N" id="KId-C2-gyC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oa7-sz-loF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344.80000000000001" y="190.25487256371815"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hVO-Gy-IBJ">
+            <objects>
+                <navigationController id="9eO-Dq-jJr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hF8-aG-BsI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BfB-1f-bKT" kind="relationship" relationship="rootViewController" id="eZf-EQ-LNs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4w-8z-QYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="190"/>
+        </scene>
+    </scenes>
+</document>

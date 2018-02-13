@@ -1,0 +1,41 @@
+{
+  "name": "LocalzAttendantSDK",
+  "summary": "LocalzAttendantSDK",
+  "version": "0.1.1",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "homepage": "http://www.localz.com",
+  "license": {
+    "type": "Commercial",
+    "text": "\t\t\tCopyright 2018 Localz Pty Ltd.\n"
+  },
+  "authors": {
+    "Localz Pty Ltd": "info@localz.com"
+  },
+  "source": {
+    "git": "https://github.com/localz/Localz-Attendant-iOS-SDK.git",
+    "tag": "0.1.1"
+  },
+  "requires_arc": true,
+  "xcconfig": {
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited)"
+  },
+  "frameworks": [
+    "CoreLocation",
+    "SystemConfiguration",
+    "Foundation"
+  ],
+  "vendored_frameworks": "LocalzAttendantSDK/LocalzAttendantSDK.framework",
+  "dependencies": {
+    "SpotzRTSDK": [
+
+    ],
+    "SpotzPushSDK": [
+
+    ],
+    "YapDatabase": [
+
+    ]
+  }
+}
