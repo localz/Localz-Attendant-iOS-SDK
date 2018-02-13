@@ -30,16 +30,16 @@ extern NSString * _Nonnull const LocalzAttendantHelpRequestNotification;
 extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
 
 @protocol LocalzAttendantSDKDelegate <NSObject>
-- (void)LocalzAttendantSDKInit:(NSError * _Nullable)error;
+- (void) localzAttendantSDKInit:(NSError * _Nullable)error;
 @optional
 /**
  * Order management delegates
  */
-- (void) LocalzAttendantSDKTrackOrder:(LocalzAttendantOrder *  _Nonnull)order data:(NSDictionary * _Nullable)data;
-- (void) LocalzAttendantSDKAcknowledgedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
-- (void) LocalzAttendantSDKCompletedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
-- (void) LocalzAttendantSDKHelpRequestWithData:(NSDictionary * _Nullable)data;
-- (void) LocalzAttendantSDKReminderWithNumberOfUnassignedOrderNumbers:(NSArray * _Nonnull)orders;
+- (void) localzAttendantSDKCheckinOrder:(LocalzAttendantOrder *  _Nonnull)order data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKAcknowledgedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKCompletedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKHelpRequestWithData:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKReminderWithNumberOfUnassignedOrderNumbers:(NSArray * _Nonnull)orders;
 
 @end
 
