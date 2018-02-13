@@ -16,4 +16,5 @@
 + (NSError *)errorWithResponse:(NSURLResponse *)response data:(NSDictionary *)data;
 + (NSError *)invalidResponseFromServer;
 + (NSError *)notFound;
++ (NSString *)descriptionForCode:(int)code;
 @end
