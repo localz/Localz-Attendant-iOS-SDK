@@ -20,6 +20,7 @@
 @property (nonatomic, readonly, strong) NSString *defaultPickup;
 @property (nonatomic, readonly, strong) NSArray *proofOfDeliveryFlow;
 @property (nonatomic, readonly, strong) NSArray *attributesPresentation;
+@property (nonatomic, readonly, strong) NSArray *subProjects;
 @property (nonatomic, readonly, strong) LocalzAttendantLocationStore *locationStoreDetails;
 
 - (LocalzAttendant *)initWithData:(NSDictionary *)data;

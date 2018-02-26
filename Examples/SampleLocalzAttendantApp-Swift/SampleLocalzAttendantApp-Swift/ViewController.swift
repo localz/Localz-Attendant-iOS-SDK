@@ -74,21 +74,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func checkInOrder(orderNumber: String!) {
         
-        LocalzAttendantSDK.shared().checkinOrderNumber(orderNumber, pickupId: storePickUpId) { (error:Error?) in
+        LocalzAttendantSDK.shared().checkinOrderNumber(orderNumber, pickupId: storePickUpId, subProjectId: nil) { (error:Error?) in
             self.reloadOrders()
         }
     }
     
     func acknowledgeOrder(orderNumber: String!) {
         
-        LocalzAttendantSDK.shared().acknowledgeOrderNumber(orderNumber) { (error:Error?) in
+        LocalzAttendantSDK.shared().acknowledgeOrderNumber(orderNumber, subProjectId: nil) { (error:Error?) in
             self.reloadOrders()
         }
     }
     
     func completeOrder(orderNumber: String!) {
         
-        LocalzAttendantSDK.shared().completeOrderNumber(orderNumber, signature: nil, notes: nil) { (error:Error?) in
+        LocalzAttendantSDK.shared().completeOrderNumber(orderNumber, signature: nil, notes: nil, subProjectId: nil) { (error:Error?) in
             self.reloadOrders()
         }
     }

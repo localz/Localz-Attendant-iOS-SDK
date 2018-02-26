@@ -137,33 +137,39 @@ extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
 - (void) createOrUpdateOrder:(LocalzAttendantOrder * _Nonnull)order completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 
 /**
- * Checks in and automatically acknowledges the given order to the current attendant
+ * Checks in and automatically acknowledge the given order to the current attendant for a sub-project
  * @param orderNumber The order number
  * @param pickupId The id of the location the order is being picked up from
+ * @param subProjectId The id of the projects subproject to check in the order to
  * @param completion The completion block which will return error if any
  */
-- (void) checkinOrderNumber:(NSString * _Nonnull)orderNumber pickupId:(NSString * _Nonnull)pickupId completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
+- (void) checkinOrderNumber:(NSString * _Nonnull)orderNumber pickupId:(NSString * _Nonnull)pickupId subProjectId:(NSString * _Nullable)subProjectId completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
 
 /**
- * Acknowledges the given order to the current attendant
+ * Acknowledges the given order to the current attendant into a sub-project
  * @param orderNumber The order number
+ * @param subProjectId The id of the projects subproject to check in the order to
  * @param completion The completion block which will return error if any
  */
-- (void) acknowledgeOrderNumber:(NSString * _Nonnull)orderNumber completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
+- (void) acknowledgeOrderNumber:(NSString * _Nonnull)orderNumber subProjectId:(NSString * _Nullable)subProjectId completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
 
 /**
- * Completes the given order
+ * Completes the given order for a sub-project
  * @param orderNumber The order number
  * @param signature The image of the captured signature (optiona)
  * @param notes Additional notes (optional)
+ * @param subProjectId The id of the projects subproject to check in the order to
+ * @param completion The completion block which will return error if any
  */
-- (void) completeOrderNumber:(NSString * _Nonnull)orderNumber signature:(UIImage * _Nullable)signature notes:(NSString * _Nullable)notes completion:(void (^_Nullable)(NSError * _Nullable error))completion;
+- (void) completeOrderNumber:(NSString * _Nonnull)orderNumber signature:(UIImage * _Nullable)signature notes:(NSString * _Nullable)notes subProjectId:(NSString * _Nullable)subProjectId completion:(void (^_Nullable)(NSError * _Nullable error))completion;
 
 /**
- * Reset the given order by number
+ * Reset the given order by number for a sub-project
  * @param orderNumber The order number
+ * @param subProjectId The id of the projects subproject to check in the order to
+ * @param completion The completion block which will return error if any
  */
-- (void) resetOrderNumber:(NSString * _Nonnull)orderNumber completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
+- (void) resetOrderNumber:(NSString * _Nonnull)orderNumber subProjectId:(NSString * _Nullable)subProjectId completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
 
 /**
  * Retrieves orders for the current attendant's store location

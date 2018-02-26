@@ -80,21 +80,21 @@
 
 - (void)checkinOrder:(NSString *)orderNumber {
     
-    [[LocalzAttendantSDK shared] checkinOrderNumber:orderNumber pickupId:self.storePickupId completion:^(NSError * _Nullable error) {
+    [[LocalzAttendantSDK shared] checkinOrderNumber:orderNumber pickupId:self.storePickupId subProjectId:nil completion:^(NSError * _Nullable error) {
         [self reloadOrders];
     }];
 }
 
 - (void)acknowledgeOrder:(NSString *)orderNumber {
     
-    [[LocalzAttendantSDK shared] acknowledgeOrderNumber:orderNumber completion:^(NSError * _Nullable error) {
+    [[LocalzAttendantSDK shared] acknowledgeOrderNumber:orderNumber subProjectId:nil completion:^(NSError * _Nullable error) {
         [self reloadOrders];
     }];
 }
 
 - (void)completeOrder:(NSString *)orderNumber {
     
-    [[LocalzAttendantSDK shared] completeOrderNumber:orderNumber signature:nil notes:nil completion:^(NSError * _Nullable error) {
+    [[LocalzAttendantSDK shared] completeOrderNumber:orderNumber signature:nil notes:nil subProjectId:nil completion:^(NSError * _Nullable error) {
         [self reloadOrders];
     }];
 }
