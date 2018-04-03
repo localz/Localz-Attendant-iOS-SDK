@@ -11,33 +11,41 @@
 
 extern NSString * const ORDER_STATUS_PENDING;
 extern NSString * const ORDER_STATUS_PENDING_PACKED;
+extern NSString * const ORDER_STATUS_READY;
 extern NSString * const ORDER_STATUS_UNASSIGNED;
 extern NSString * const ORDER_STATUS_ASSIGNED;
+extern NSString * const ORDER_STATUS_HANDOVER;
 extern NSString * const ORDER_STATUS_COMPLETE;
-extern NSString * const ORDER_STATUS_READY;
+extern NSString * const ORDER_STATUS_DELETED;
 
 @interface LocalzAttendantOrder : NSObject<NSCoding>
+@property (nonatomic, readonly, strong) NSString *orderNumber;
+@property (nonatomic, readonly, strong) NSString *orderStatus;
+@property (nonatomic, readonly, strong) NSString *orderAmount;
+@property (nonatomic, readonly, strong) NSDate *orderDate;
+@property (nonatomic, readonly, strong) NSDate *pickupStart;
+@property (nonatomic, readonly, strong) NSDate *pickupEnd;
+@property (nonatomic, readonly, strong) NSString *pickupLocation;
+@property (nonatomic, readonly, strong) NSString *shopperId;
 @property (nonatomic, readonly, strong) NSString *deliveryName;
 @property (nonatomic, readonly, strong) NSString *deliveryEmail;
 @property (nonatomic, readonly, strong) NSString *deliveryPhone;
-@property (nonatomic, readonly, strong) NSString *orderAmount;
-@property (nonatomic, readonly, strong) NSDate *orderDate;
-@property (nonatomic, readonly, strong) NSString *orderNumber;
-@property (nonatomic, readonly, strong) NSDate *expectedDateFrom;
-@property (nonatomic, readonly, strong) NSDate *expectedDateTo;
-@property (nonatomic, readonly, strong) NSString *shopperId;
+@property (nonatomic, readonly, strong) NSString *allocatedAttendantLogin;
+@property (nonatomic, readonly, strong) NSDate *staffLocNotified;
+@property (nonatomic, readonly, strong) NSArray *items;
 @property (nonatomic, readonly, strong) NSNumber *totalItems;
 @property (nonatomic, readonly, strong) NSDictionary *specific;
-@property (nonatomic, readonly, strong) NSString *locationId;
-@property (nonatomic, readonly, strong) NSString *branchId;
-@property (nonatomic, readonly, strong) NSArray *orderItems;
-@property (nonatomic, readonly, strong) NSDate *checkinDate;
-@property (nonatomic, readonly, strong) NSString *checkinMethod;
-@property (nonatomic, readonly, strong) NSString *pickupLocation;
-@property (nonatomic, readonly, strong) NSString *status;
 @property (nonatomic, readonly) BOOL shouldGiveFeedback; // whether the user should provide feedback on the order after completion
 @property (nonatomic, readonly, strong) NSArray *proofOfDeliveryFlow;
 @property (nonatomic, readonly, strong) NSString *subProjectId;
+
+// Deprecated
+@property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");
+@property (nonatomic, readonly, strong) NSDate *expectedDateFrom __deprecated_msg("Please use pickupStart instead");
+@property (nonatomic, readonly, strong) NSDate *expectedDateTo __deprecated_msg("Please use pickupEnd instead");
+@property (nonatomic, readonly, strong) NSArray *orderItems __deprecated_msg("Please use items instead");
+@property (nonatomic, readonly, strong) NSString *locationId __deprecated_msg("locationId is no longer available");
+@property (nonatomic, readonly, strong) NSString *branchId __deprecated_msg("branchId is no longer available");
 
 - (LocalzAttendantOrder *)initWithData:(NSDictionary *)data;
 

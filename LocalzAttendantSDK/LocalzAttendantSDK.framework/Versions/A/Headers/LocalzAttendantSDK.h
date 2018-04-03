@@ -28,6 +28,7 @@ extern NSString * _Nonnull const LocalzAttendantAcknowledgedOrderNotification;
 extern NSString * _Nonnull const LocalzAttendantCompletedOrderNotification;
 extern NSString * _Nonnull const LocalzAttendantHelpRequestNotification;
 extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
+extern NSString * _Nonnull const LocalzAttendantForceLogoutNotification;
 
 @protocol LocalzAttendantSDKDelegate <NSObject>
 - (void) localzAttendantSDKInit:(NSError * _Nullable)error;
@@ -40,6 +41,7 @@ extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
 - (void) localzAttendantSDKCompletedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKHelpRequestWithData:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKReminderWithNumberOfUnassignedOrderNumbers:(NSArray * _Nonnull)orders;
+- (void) localzAttendantSDKForceLogout:(NSDictionary * _Nullable)data;
 
 @end
 
@@ -93,7 +95,7 @@ extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
  * Login user with username / password. This is one of the login method which requires the username and password be setup through the Localz web console. See other login implementations for more details.
  * @param username Username
  * @param password The password
- * @param branchId The main site/branch where this user's orders or jobs are linked (optional)
+ * @param branchId The main site/branch where this user's orders or jobs are linked
  * @param force Force logout the other user's session if exists. If user has logged in elsewhere and force is false, an error will be returned in the completion block
  * @param options Additional login options (optional)
  * @param completion Completion block returns LocalzAttendant object if successful or error if any
