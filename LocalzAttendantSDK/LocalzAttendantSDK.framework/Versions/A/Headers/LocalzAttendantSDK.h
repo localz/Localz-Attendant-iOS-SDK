@@ -29,6 +29,7 @@ extern NSString * _Nonnull const LocalzAttendantCompletedOrderNotification;
 extern NSString * _Nonnull const LocalzAttendantHelpRequestNotification;
 extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
 extern NSString * _Nonnull const LocalzAttendantForceLogoutNotification;
+extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
 
 @protocol LocalzAttendantSDKDelegate <NSObject>
 - (void) localzAttendantSDKInit:(NSError * _Nullable)error;
@@ -42,7 +43,7 @@ extern NSString * _Nonnull const LocalzAttendantForceLogoutNotification;
 - (void) localzAttendantSDKHelpRequestWithData:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKReminderWithNumberOfUnassignedOrderNumbers:(NSArray * _Nonnull)orders;
 - (void) localzAttendantSDKForceLogout:(NSDictionary * _Nullable)data;
-
+- (void) localzAttendantSDKOrderSync:(BOOL)syncing;
 @end
 
 @protocol LocalzAttendantSDKDataSource <NSObject>
@@ -193,6 +194,12 @@ extern NSString * _Nonnull const LocalzAttendantForceLogoutNotification;
  * @return true if there is cached data
  */
 - (BOOL) isCachedData;
+
+/**
+ * Counts the number of orders currently waiting to be synced to the server due to an offline connection
+ * @param completion The block called upon completion of retrieving the count of out of sync orders
+ */
+- (void) countOrdersOutOfSync:(void (^_Nullable)(int ordersOutOfSync))completion;
 
 /**
  * Force sync data with the server. This method is only run if there are cached data and a connection to the Localz server.
