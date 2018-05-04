@@ -30,6 +30,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSString *deliveryName;
 @property (nonatomic, readonly, strong) NSString *deliveryEmail;
 @property (nonatomic, readonly, strong) NSString *deliveryPhone;
+@property (nonatomic, readonly, strong) NSString *checkinPin;
 @property (nonatomic, readonly, strong) NSString *allocatedAttendantLogin;
 @property (nonatomic, readonly, strong) NSDate *staffLocNotified;
 @property (nonatomic, readonly, strong) NSArray *items;

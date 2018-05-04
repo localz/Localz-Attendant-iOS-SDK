@@ -149,6 +149,13 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
 - (void) checkinOrderNumber:(NSString * _Nonnull)orderNumber pickupId:(NSString * _Nonnull)pickupId subProjectId:(NSString * _Nullable)subProjectId completion:(void(^ _Nullable)(NSError * _Nullable error))completion;
 
 /**
+ * Checks in and automatically acknowledges the given order to the current attendant
+ * @param orderPin The pin supplied by the customer to verify their order
+ * @param completion The completion block which will return error if any
+ */
+- (void) checkinOrderPin:(NSString * _Nonnull)orderPin completion:(void(^ _Nullable)(NSError * _Nullable error, LocalzAttendantOrder * _Nullable order))completion;
+
+/**
  * Acknowledges the given order to the current attendant into a sub-project
  * @param orderNumber The order number
  * @param subProjectId The id of the projects subproject to check in the order to
@@ -185,6 +192,13 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
  * @param completion The completion block which will return error if any
  */
 - (void) retrieveNonCompleteOrdersWithCompletion:(void (^ _Nullable)(NSError * _Nullable error, NSArray * _Nullable orders))completion;
+
+/**
+ * Retrieves a single order for a customer's order pin
+ * @param pin The pin supplied by the customer to verify their order
+ * @param completion The completion block which will return error if any
+ */
+- (void) retrieveOrderByPin:(NSString * _Nonnull)pin completion:(void(^ _Nullable)(LocalzAttendantOrder * _Nullable order))completion;
 
 #pragma mark Offline cached data handler
 
