@@ -193,13 +193,6 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
  */
 - (void) retrieveNonCompleteOrdersWithCompletion:(void (^ _Nullable)(NSError * _Nullable error, NSArray * _Nullable orders))completion;
 
-/**
- * Retrieves a single order for a customer's order pin
- * @param pin The pin supplied by the customer to verify their order
- * @param completion The completion block which will return error if any
- */
-- (void) retrieveOrderByPin:(NSString * _Nonnull)pin completion:(void(^ _Nullable)(LocalzAttendantOrder * _Nullable order))completion;
-
 #pragma mark Offline cached data handler
 
 /**
