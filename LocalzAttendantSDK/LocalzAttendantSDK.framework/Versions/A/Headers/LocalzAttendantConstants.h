@@ -10,6 +10,9 @@ extern NSString * const SPOTZ_CNC_NETWORK_NOTIFICATION;
 extern int const SPOTZ_CNC_IGNORE_ALERT_NOTIFICATION_PERIOD;
 typedef enum {
     EPushInitError = 510,
+    EPinCheckinOrderNotFound = 3001,
+    EPinCheckinOrderNotReady = 3002,
+    EPinCheckinOrderCompleted = 3003,
     EOrderAlreadyActioned = 4001,
     ESyncInProgress = 5001,
     ECacheExists = 5002
