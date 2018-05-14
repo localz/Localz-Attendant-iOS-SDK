@@ -193,6 +193,15 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
  */
 - (void) retrieveNonCompleteOrdersWithCompletion:(void (^ _Nullable)(NSError * _Nullable error, NSArray * _Nullable orders))completion;
 
+/**
+ * Verified that an order number (and sub-project id if it exists) match the an order pin
+ * @param orderNumber The order's order number to compare to the order's pin
+ * @param subProjectId The order's sub-project id to compare to the order's pin (if it exists)
+ * @param orderPin The order's orderPin to compare to the order number and sub-project id
+ * @param completion The completion block with a true/false value of whether the parameters matched up or not
+ */
+- (void) verifyOrderNumber:(NSString * _Nonnull)orderNumber subProjectId:(NSString * _Nullable)subProjectId withOrderPin:(NSString * _Nonnull)orderPin completion:(void(^ _Nullable)(BOOL verified))completion;
+
 #pragma mark Offline cached data handler
 
 /**
