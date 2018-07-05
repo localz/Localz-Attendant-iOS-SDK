@@ -7,6 +7,19 @@
 //
 // Notification of network status
 extern NSString * const SPOTZ_CNC_NETWORK_NOTIFICATION;
+
+extern NSString * const ALARM_REPEAT_ONCE;
+extern NSString * const ALARM_REPEAT_REPEAT;
+extern NSString * const ALARM_REPEAT_NOW_REPEAT;
+
+extern NSString * const ALARM_CREATE_PER_ORDER;
+extern NSString * const ALARM_CREATE_PER_ALLORDERS;
+extern NSString * const ALARM_CREATE_PER_NEWORDERS;
+
+extern NSString * const ALARM_STATUS_ACTIVE;
+extern NSString * const ALARM_STATUS_SUSPENDED;
+extern NSString * const ALARM_STATUS_CANCELED;
+
 extern int const SPOTZ_CNC_IGNORE_ALERT_NOTIFICATION_PERIOD;
 typedef enum {
     EPushInitError = 510,

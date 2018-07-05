@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #import "LocalzAttendant.h"
-#import "LocalzAttendantOrder.h"
+#import "LocalzAttendantOrderAlarm.h"
 
 extern NSString * _Nonnull const kLocalzEnv;
 
@@ -30,6 +30,9 @@ extern NSString * _Nonnull const LocalzAttendantHelpRequestNotification;
 extern NSString * _Nonnull const LocalzAttendantUnassignedOrdersNotification;
 extern NSString * _Nonnull const LocalzAttendantForceLogoutNotification;
 extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
+extern NSString * _Nonnull const LocalzAttendantOrdersChangedNotification;
+extern NSString * _Nonnull const LocalzAttendantOrderAlarmsUpdateNotification;
+extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
 
 @protocol LocalzAttendantSDKDelegate <NSObject>
 - (void) localzAttendantSDKInit:(NSError * _Nullable)error;
@@ -37,13 +40,17 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
 /**
  * Order management delegates
  */
-- (void) localzAttendantSDKCheckinOrder:(LocalzAttendantOrder *  _Nonnull)order data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKOrdersChanged:(LocalzAttendantOrder *  _Nonnull)order data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKCheckinOrder:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKAcknowledgedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKCompletedOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
+- (void) localzAttendantSDKResetOrderNumber:(NSString * _Nonnull)orderNumber data:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKHelpRequestWithData:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKReminderWithNumberOfUnassignedOrderNumbers:(NSArray * _Nonnull)orders;
 - (void) localzAttendantSDKForceLogout:(NSDictionary * _Nullable)data;
 - (void) localzAttendantSDKOrderSync:(BOOL)syncing;
+- (void) localzAttendantSDKOrderAlarmsUpdate:(NSDictionary * _Nullable)data;
+
 @end
 
 @protocol LocalzAttendantSDKDataSource <NSObject>
@@ -201,6 +208,24 @@ extern NSString * _Nonnull const LocalzAttendantOrderSyncNotification;
  * @param completion The completion block with a true/false value of whether the parameters matched up or not
  */
 - (void) verifyOrderNumber:(NSString * _Nonnull)orderNumber subProjectId:(NSString * _Nullable)subProjectId withOrderPin:(NSString * _Nonnull)orderPin completion:(void(^ _Nullable)(BOOL verified))completion;
+
+/**
+ * Retrieves orders and their subsequent alarms
+ * @param completion The completion block containing an array of LocalzAttendantOrderAlarm objects that are currently unacknowledged
+ */
+- (void) getTriggeredOrderAlarmsWithCompletion:(void (^)(NSArray * _Nonnull triggeredOrderAlarms))completion;
+
+/**
+ * Acknowledges an alarm for a particular order
+ * @param alarmId The id of the alarm to acknowledge
+ */
+- (void) acknowledgeAlarmId:(NSString * _Nonnull)alarmId;
+
+/**
+ * Update the selected pickup locations
+ * @param selectedAlarmPickupLocations The selected pickup locations (array of string IDs) that will be updated in the SDK.
+ */
+- (void) updateAlarmPickupLocations:(NSArray <NSString *> * _Nonnull)selectedAlarmPickupLocations;
 
 #pragma mark Offline cached data handler
 
