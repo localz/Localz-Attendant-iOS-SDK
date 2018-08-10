@@ -40,6 +40,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSArray *proofOfDeliveryFlow;
 @property (nonatomic, readonly, strong) NSString *subProjectId;
 @property (nonatomic, readonly, strong) NSString *staffName;
+@property (nonatomic, readonly) BOOL isPriority;
 
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");
