@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalzAttendantAlarm : NSObject
+@interface LocalzAttendantAlarm : NSObject <NSCopying>
 
 @property (nonatomic, strong) NSString *alarmId;
 @property (nonatomic, strong) NSString *type;
