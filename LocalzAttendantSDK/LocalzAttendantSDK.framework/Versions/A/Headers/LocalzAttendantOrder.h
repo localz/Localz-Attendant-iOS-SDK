@@ -18,7 +18,7 @@ extern NSString * const ORDER_STATUS_HANDOVER;
 extern NSString * const ORDER_STATUS_COMPLETE;
 extern NSString * const ORDER_STATUS_DELETED;
 
-@interface LocalzAttendantOrder : NSObject<NSCoding>
+@interface LocalzAttendantOrder : NSObject <NSSecureCoding>
 @property (nonatomic, readonly, strong) NSString *orderNumber;
 @property (nonatomic, readonly, strong) NSString *orderStatus;
 @property (nonatomic, readonly, strong) NSString *orderAmount;
