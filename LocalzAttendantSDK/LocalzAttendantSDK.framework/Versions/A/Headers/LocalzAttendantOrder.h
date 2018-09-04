@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LocalzAttendantOrderItem.h"
+#import "LocalzAttendantOrderNominees.h"
 
 extern NSString * const ORDER_STATUS_PENDING;
 extern NSString * const ORDER_STATUS_PENDING_PACKED;
@@ -41,6 +42,8 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSString *subProjectId;
 @property (nonatomic, readonly, strong) NSString *staffName;
 @property (nonatomic, readonly) BOOL isPriority;
+@property (nonatomic, readonly) BOOL returnCustomer;
+@property (nonatomic, readonly, strong) LocalzAttendantOrderNominees *nominees;
 
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");
