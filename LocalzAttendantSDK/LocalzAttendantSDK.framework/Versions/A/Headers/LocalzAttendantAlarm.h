@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *alarmStatus;
 @property (nonatomic) BOOL triggered;
 @property (nonatomic) int delaySeconds;
-@property (nonatomic) NSDate *created;
+@property (nonatomic, strong) NSDate *created;
+@property (nonatomic, strong) NSDate *lastUpdated;
 
 @end
