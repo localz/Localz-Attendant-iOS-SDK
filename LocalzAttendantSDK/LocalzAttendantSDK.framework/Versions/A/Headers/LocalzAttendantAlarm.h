@@ -19,6 +19,6 @@
 @property (nonatomic) BOOL triggered;
 @property (nonatomic) int delaySeconds;
 @property (nonatomic, strong) NSDate *created;
-@property (nonatomic, strong) NSDate *lastUpdated;
+@property (nonatomic, strong) NSDate *updated;
 
 @end
