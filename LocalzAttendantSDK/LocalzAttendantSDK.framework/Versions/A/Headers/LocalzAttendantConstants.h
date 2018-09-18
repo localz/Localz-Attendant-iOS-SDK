@@ -7,6 +7,7 @@
 //
 // Notification of network status
 extern NSString * const SPOTZ_CNC_NETWORK_NOTIFICATION;
+extern NSString * const SELECTED_PICKUP_LOCATIONS;
 
 extern NSString * const ALARM_REPEAT_ONCE;
 extern NSString * const ALARM_REPEAT_REPEAT;
@@ -19,6 +20,11 @@ extern NSString * const ALARM_CREATE_PER_NEWORDERS;
 extern NSString * const ALARM_STATUS_ACTIVE;
 extern NSString * const ALARM_STATUS_SUSPENDED;
 extern NSString * const ALARM_STATUS_CANCELED;
+
+extern NSString * const LOCALZ_ATTENDANT_VERSION;
+extern NSString * const LOCALZ_ATTENDANT_PROXIMITY;
+
+extern NSString * const PROXIMITY_ATTRIBUTE_NAME_PREFIX;
 
 extern int const SPOTZ_CNC_IGNORE_ALERT_NOTIFICATION_PERIOD;
 typedef enum {

@@ -44,6 +44,9 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly) BOOL isPriority;
 @property (nonatomic, readonly) BOOL returnCustomer;
 @property (nonatomic, readonly, strong) NSArray <LocalzAttendantOrderNominees *> *nominees;
+@property (nonatomic, readonly, strong) NSString *checkinMethod;
+@property (nonatomic, readonly, strong) NSString *completedStaffName;
+@property (nonatomic, readonly, strong) NSString *currency;
 
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");

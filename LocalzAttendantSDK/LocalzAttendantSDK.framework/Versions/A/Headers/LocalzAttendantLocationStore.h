@@ -27,5 +27,6 @@
 @property (nonatomic, readonly, strong) NSArray *todayWorkingHours __deprecated_msg("Please use locationTodayWorkingHours instead");
 
 - (instancetype)initWithData:(NSDictionary *)data;
+- (void) updatePickupLocations:(NSArray *)pickupLocations;
 
 @end

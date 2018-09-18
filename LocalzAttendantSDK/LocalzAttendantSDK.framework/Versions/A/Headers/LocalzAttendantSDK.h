@@ -221,11 +221,18 @@ extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
  */
 - (void) acknowledgeAlarmId:(NSString * _Nonnull)alarmId;
 
-/**
+ /**
  * Update the selected pickup locations
+ * @param selectedPickupLocations The selected pickup locations (array of string IDs) that will be updated in the SDK.
+ * @param completion The completion block called when the selected pickup locations have finished updating
+ */
+- (void) updateSelectedPickupLocations:(NSArray <NSString *> * _Nonnull)selectedPickupLocations withCompletion:(void(^)(void))completion;
+
+/**
+ * Update the selected alarm pickup locations
  * @param selectedAlarmPickupLocations The selected pickup locations (array of string IDs) that will be updated in the SDK.
  */
-- (void) updateAlarmPickupLocations:(NSArray <NSString *> * _Nonnull)selectedAlarmPickupLocations;
+- (void) updateAlarmPickupLocations:(NSArray <NSString *> * _Nonnull)selectedAlarmPickupLocations __deprecated_msg("Please use updateSelectedPickupLocations: withCompletion: instead");
 
 #pragma mark Offline cached data handler
 

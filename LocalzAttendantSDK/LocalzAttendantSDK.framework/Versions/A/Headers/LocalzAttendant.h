@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LocalzAttendantLocationStore.h"
+#import "LocalzAttendantAttributesPresentation.h"
 
 @interface LocalzAttendant : NSObject<NSCoding>
 @property (nonatomic, readonly, strong) NSString *attendantId;
@@ -15,7 +16,7 @@
 @property (nonatomic, readonly, strong) NSString *firstName;
 @property (nonatomic, readonly, strong) NSString *lastName;
 @property (nonatomic, readonly, strong) NSArray *proofOfDeliveryFlow;
-@property (nonatomic, readonly, strong) NSArray *attributesPresentation;
+@property (nonatomic, readonly, strong) NSArray <LocalzAttendantAttributesPresentation *> *attributesPresentation;
 @property (nonatomic, readonly, strong) NSArray *subProjects;
 @property (nonatomic, readonly, strong) LocalzAttendantLocationStore *location;
 
