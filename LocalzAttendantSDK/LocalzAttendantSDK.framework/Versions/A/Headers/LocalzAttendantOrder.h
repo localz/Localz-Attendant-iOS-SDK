@@ -47,6 +47,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSString *checkinMethod;
 @property (nonatomic, readonly, strong) NSString *completedStaffName;
 @property (nonatomic, readonly, strong) NSString *currency;
+@property (nonatomic, readonly, strong) NSString *secondaryReference;
 
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");
