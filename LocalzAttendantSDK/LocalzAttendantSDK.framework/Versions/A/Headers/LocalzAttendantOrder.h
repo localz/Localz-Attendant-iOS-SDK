@@ -40,6 +40,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly) BOOL shouldGiveFeedback; // whether the user should provide feedback on the order after completion
 @property (nonatomic, readonly, strong) NSArray *proofOfDeliveryFlow;
 @property (nonatomic, readonly, strong) NSString *subProjectId;
+@property (nonatomic, readonly, strong) NSString *secondaryReference;
 @property (nonatomic, readonly, strong) NSString *staffName;
 @property (nonatomic, readonly) BOOL isPriority;
 @property (nonatomic, readonly) BOOL returnCustomer;
@@ -47,7 +48,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSString *checkinMethod;
 @property (nonatomic, readonly, strong) NSString *completedStaffName;
 @property (nonatomic, readonly, strong) NSString *currency;
-@property (nonatomic, readonly, strong) NSString *secondaryReference;
+
 
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");

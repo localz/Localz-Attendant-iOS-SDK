@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 	s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
         s.frameworks = 'CoreLocation','SystemConfiguration','Foundation'
 	s.vendored_frameworks = 'LocalzAttendantSDK/LocalzAttendantSDK.framework'
-	s.dependency 'SpotzRTSDK', '~> 3.2.8'
-	s.dependency 'SpotzPushSDK'
-	s.dependency 'YapDatabase'
+	# s.dependency 'SpotzRTSDK', '~> 3.2.8'
+	# s.dependency 'SpotzPushSDK'
+	# s.dependency 'YapDatabase'
 end
