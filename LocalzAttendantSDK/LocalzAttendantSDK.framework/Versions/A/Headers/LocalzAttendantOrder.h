@@ -49,7 +49,6 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSString *completedStaffName;
 @property (nonatomic, readonly, strong) NSString *currency;
 
-
 // Deprecated
 @property (nonatomic, readonly, strong) NSString *status __deprecated_msg("Please use orderStatus instead");
 @property (nonatomic, readonly, strong) NSDate *expectedDateFrom __deprecated_msg("Please use pickupStart instead");
