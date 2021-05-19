@@ -147,6 +147,14 @@ extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
 - (void) createOrUpdateOrder:(LocalzAttendantOrder * _Nonnull)order completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 
 /**
+ * Updates a specific payload to order. This will require cncKey (Attendant Key) to be supplied into the SDK
+ * @param specific Specific payload to update
+ * @param orderNumber  order number
+ * @param completion The completion block which will return error if any
+ */
+- (void) updateOrderSpecific:(NSDictionary * _Nonnull)specific orderNumber:(NSString * _Nonnull) orderNumber subProjectId:(NSString * _Nullable) subProjectId  completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+
+/**
  * Checks in and automatically acknowledge the given order to the current attendant for a sub-project
  * @param orderNumber The order number
  * @param pickupId The id of the location the order is being picked up from
@@ -233,6 +241,7 @@ extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
  * @param selectedAlarmPickupLocations The selected pickup locations (array of string IDs) that will be updated in the SDK.
  */
 - (void) updateAlarmPickupLocations:(NSArray <NSString *> * _Nonnull)selectedAlarmPickupLocations __deprecated_msg("Please use updateSelectedPickupLocations: withCompletion: instead");
+
 
 #pragma mark Offline cached data handler
 
