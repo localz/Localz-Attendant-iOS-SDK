@@ -26,6 +26,7 @@ extern NSString * const LOCALZ_ATTENDANT_PROXIMITY;
 
 extern NSString * const PROXIMITY_ATTRIBUTE_NAME_PREFIX;
 extern NSString * const PROXIMITY_ATTRIBUTE_ACK_PREFIX;
+extern NSString * const PROXIMITY;
 
 
 extern int const SPOTZ_CNC_IGNORE_ALERT_NOTIFICATION_PERIOD;
