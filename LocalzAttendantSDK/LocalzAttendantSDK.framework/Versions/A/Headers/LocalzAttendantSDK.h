@@ -14,6 +14,7 @@
 
 #import "LocalzAttendant.h"
 #import "LocalzAttendantOrderAlarm.h"
+#import "LocalzAttendantSDKOptions.h"
 
 extern NSString * _Nonnull const kLocalzEnv;
 
@@ -69,7 +70,7 @@ extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
  * @param delegate LocalzAttendantSDKDelegate instance to handle the SDK events (optional)
  * @param options Additional configuration options. Please see Localz's documentation for more details. (optional)
  */
-+ (void)initWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey delegate:(id<LocalzAttendantSDKDelegate> _Nullable)delegate options:(NSDictionary * _Nullable)options;
++ (void)initWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey delegate:(id<LocalzAttendantSDKDelegate> _Nullable)delegate options:(LocalzAttendantSDKOptions * _Nullable)options;
 
 /**
  * Initialise the SDK. All keys are available on the Localz web console. If you have no access to the console, please contact your one of Localz's reps.
@@ -79,7 +80,7 @@ extern NSString * _Nonnull const LocalzAttendantResetOrderNotification;
  * @param delegate LocalzAttendantSDKDelegate instance to handle the SDK events (optional)
  * @param options Additional configuration options. Please see Localz's documentation for more details. (optional)
  */
-+ (void) initWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey cncKey:(NSString * _Nullable)cncKey delegate:(id<LocalzAttendantSDKDelegate> _Nullable)delegate options:(NSDictionary * _Nullable)options;
++ (void) initWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey cncKey:(NSString * _Nullable)cncKey delegate:(id<LocalzAttendantSDKDelegate> _Nullable)delegate options:(LocalzAttendantSDKOptions * _Nullable)options;
 
 /**
  * Starts the Push notification. This will initialise push notification service and prompt user for enabling push notification if not yet enabled.
