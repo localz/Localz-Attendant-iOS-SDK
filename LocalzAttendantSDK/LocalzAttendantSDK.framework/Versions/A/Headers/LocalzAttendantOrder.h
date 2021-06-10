@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LocalzAttendantOrderItem.h"
 #import "LocalzAttendantOrderNominees.h"
+#import "LocalzAttendantPickupLocation.h"
 
 extern NSString * const ORDER_STATUS_PENDING;
 extern NSString * const ORDER_STATUS_PENDING_PACKED;
@@ -27,6 +28,7 @@ extern NSString * const ORDER_STATUS_DELETED;
 @property (nonatomic, readonly, strong) NSDate *pickupStart;
 @property (nonatomic, readonly, strong) NSDate *pickupEnd;
 @property (nonatomic, readonly, strong) NSString *pickupLocation;
+@property (nonatomic, readonly, strong) LocalzAttendantPickupLocation *pickupLocationInfo;
 @property (nonatomic, readonly, strong) NSString *shopperId;
 @property (nonatomic, readonly, strong) NSString *deliveryName;
 @property (nonatomic, readonly, strong) NSString *deliveryEmail;
@@ -82,4 +84,10 @@ extern NSString * const ORDER_STATUS_DELETED;
 - (void) completeOrderIfReady;
 
 - (NSDictionary *) toJSON;
+
+/**
+ * Sets up additional pickup information based on the current attendant
+ * NOTE: this needs to be moved to `config-api`
+ */
+- (void) setPickupInfo;
 @end

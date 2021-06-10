@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalzAttendantPickupLocation : NSObject<NSCoding>
+@interface LocalzAttendantPickupLocation : NSObject<NSCopying>
 @property (nonatomic, readonly, strong) NSString *pickupId;
 @property (nonatomic, readonly, strong) NSString *name;
 @property (nonatomic, readonly, strong) NSString *desc;
 
 - (instancetype)initWithData:(NSDictionary *)data;
+- (NSDictionary<NSString *, NSString *> *) toJSON;
+
 @end
